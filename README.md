@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # personalweb
 
 > A Vue.js project
@@ -16,3 +17,7 @@ npm run build
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+||||||| merged common ancestors
+=======
+# test
+>>>>>>> 25eb210aa80a4cfb6db2aed2121aa374abe50c5e
