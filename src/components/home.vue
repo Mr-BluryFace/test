@@ -93,28 +93,36 @@
         </p>
         <div id="port" class="row">
           <div class="col-sm">
+            <div id="p-over" class="over">
+              <button type="button" class="btn btn-outline-secondary">Secondary</button>
+            </div>
             <img class="img-fluid" src="./images/port/a.jpg" />
             <h3>Wedding Dress</h3>
           </div>
           <div class="col-sm">
+            <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/b.jpg" />
             <h3>Wedding Dress</h3>
           </div>
           <div class="col-sm">
+            <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/c.jpg" />
           <h3>Wedding Dress</h3>
           </div>
         </div>
         <div id="port" class="row">
           <div class="col-sm">
+            <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/d.jpg" />
             <h3>Wedding Dress</h3>
           </div>
           <div class="col-sm">
+            <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/f.jpg" />
             <h3>Wedding Dress</h3>
           </div>
           <div class="col-sm">
+            <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/g.jpg" />
           <h3>Wedding Dress</h3>
           </div>
@@ -124,8 +132,10 @@
     <!-- contact me -->
     <div class="contact">
       <div class="container">
-        <h1 id="title2">Our Contacts</h1>
-        <img id="map1" class="img-fluid" src="./images/7.jpg" />
+        <h1 id="title2"><q>Our Contacts</q></h1>
+        <div id="map1">
+          <div id="map"></div>
+        </div>
         <div class="info">
           <h1 id="title">I Can</h1>
 
@@ -167,8 +177,8 @@ export default {
       console.log('calling handleScroll');
     }
   },
-  mounted: function(){
-    $('.back').height($(window).height());
+  created(){
+
   }
 
 }
@@ -317,6 +327,7 @@ hr{
 }
 .portofolio h3{
   color: #501e36;
+  margin-bottom: 70px;
 }
 .portofolio p{
   margin-bottom: 75px;
@@ -354,60 +365,73 @@ hr{
   float: left;
   height: 400px;
   background-color: rgba(150,150,150,0.3);
-  border: solid 3px #FFF;
-  border-radius: 4px;
+  border: solid 3px #000;
+  border-radius: 5px;
   margin-bottom: 5px;
   background-size: cover;
   margin-bottom: 20px;
   display: inline-block;
 }
+.contact{
+  height: 700px;
+  background-color: #FFF;
+  position: relative;
+  top: -110px;
+
+}
 .contact h1{
-  color: #FFF;
+  color: #000;
   text-align: center;
   margin-bottom: 35px;
 
 }
+.contact q{
+  color: #000;
+}
 .contact .info{
   float: left;
-  margin-left: 60px;
+  margin-left: 80px;
   box-sizing: content-box;
 }
 .addr,.mail,.phone{
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .addr h1,.addr h4{
-  color: #FFF;
-  text-align: center;
+  color: #000;
+  text-align: left;
 }
 .addr h4{
   margin-top: -15px;
-  text-align: center;
   font-size: 20px;
   font-style: italic;
+  text-align: left;
 }
 .words{
   margin-top: -25px;
-  margin-left: 30px;
+  text-align: left;
+}
+.phone h1{
+  text-align: left;
 }
 .phone h5{
-  color: #FFF;
+  color: #000;
   margin-top: -25px;
-  text-align: center;
   font-size: 20px;
   font-style: italic;
+  text-align: left;
 }
 .mail h1{
   margin-top: 20px;
   margin-bottom: 5px;
   text-align: center;
-      font-size: 40px;
+  font-size: 40px;
+  text-align: left;
 }
 .mail h5{
-  color: #FFF;
-  margin-left: 30px;
-  text-align: center;
+  color: #000;
   font-size: 20px;
   font-style: italic;
+  text-align: left;
 }
 #title{
   font-size: 55px;
@@ -429,5 +453,31 @@ hr{
     width: 80%;
     margin: auto;
   }
+}
+#map{
+  height: 394px;
+  width: 100%;
+}
+#p-over{
+  background-color: #501E36;
+  opacity: 0.5;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  display: none;
+}
+#p-over button{
+  background-color: transparent;
+  margin: auto;
+  width: 120px;
+  height: 52px;
+  border: 1px solid #FFF;
+  border-radius: 6px;
+  color: #FFF;
+  margin-left: 40%;
+  margin-top: 60%;
+
+
 }
 </style>
