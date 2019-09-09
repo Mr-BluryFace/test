@@ -1,0 +1,30 @@
+[33mcommit dd72a551197895185f04a8ed88fb736684699d6a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ahmed Emad <52167863+MrBluryFace@users.noreply.github.com>
+Date:   Mon Sep 9 23:34:20 2019 +0200
+
+    some edits
+
+[33mcommit b813de95581a850ccce3234ce05d556448cfcdc9[m
+Author: Ahmed Emad <52167863+MrBluryFace@users.noreply.github.com>
+Date:   Mon Sep 9 16:26:48 2019 +0200
+
+    some changes
+
+[33mcommit a50d0ef5b1f55482172a960a8c699883f5a06f44[m
+Merge: f06b08a 25eb210
+Author: Ahmed Emad <52167863+MrBluryFace@users.noreply.github.com>
+Date:   Sun Sep 8 18:11:45 2019 +0200
+
+    Merge branch 'master' of https://github.com/Mr-BluryFace/test
+
+[33mcommit f06b08a01cc5cdddc85381df9c0c11bae1f979a9[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Ahmed Emad <52167863+MrBluryFace@users.noreply.github.com>
+Date:   Sat Sep 7 16:10:16 2019 +0200
+
+    my first
+
+[33mcommit 25eb210aa80a4cfb6db2aed2121aa374abe50c5e[m
+Author: Mr-BluryFace <40479451+Mr-BluryFace@users.noreply.github.com>
+Date:   Sat Sep 7 16:05:12 2019 +0200
+
+    Initial commit
