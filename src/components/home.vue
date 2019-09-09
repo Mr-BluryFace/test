@@ -1,10 +1,12 @@
 <template>
   <div id="Home">
+    <!--
   <div id="back" class="over back">
     <img src="./images/4.jpg" />
   </div>
+    -->
     <div id="nv" class="container sticky-top">
-      <nav class="navbar navbar-light sticky-top" style="color:#FFF;background-color: #0f2862;">
+      <nav class="navbar navbar-light sticky-top" style="color:#FFF;background-color:#501e36;">
         <img src="./images/logo1.png" />
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,21 +44,30 @@
     </div>
 
     <!--slide-->
+    <div class="header">
+      <div class="container">
+        <h1>Dress Shop</h1>
+        <p>
+          We Are Selling Some Cool Stuff
+        </p>
+      </div>
+
+    </div>
+
+
+    <!--
     <div class="container">
       <div class="slide">
           <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src='./images/q.jpg' class="d-block w-100" alt="">
-                <div class="over"></div>
               </div>
               <div class="carousel-item">
                 <img src="./images/w.jpg" class="d-block w-100" alt="">
-                <div class="over"></div>
               </div>
               <div class="carousel-item">
                 <img src="./images/e.jpg" class="d-block w-100" alt="">
-                <div class="over"></div>
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -70,37 +81,77 @@
           </div>
       </div>
     </div>
-
-    <div class="container">
-      <hr />
-    </div>
+      -->
 
     <!-- port -->
+    <div class="portofolio">
+      <div id="b-port" class="container">
 
-    <div class="container">
-      <p class="h1">Our Portofolio</p>
-      <div class="row">
-        <div class="col-sm">
-          <img src="./images/port/a.jpg" />
-          <p class="lead">
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-          </p>
+        <h1><q>Our Portofolio</q></h1>
+        <p class="h3">
+          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+        <div id="port" class="row">
+          <div class="col-sm">
+            <img class="img-fluid" src="./images/port/a.jpg" />
+            <h3>Wedding Dress</h3>
+          </div>
+          <div class="col-sm">
+            <img class="img-fluid" src="./images/port/b.jpg" />
+            <h3>Wedding Dress</h3>
+          </div>
+          <div class="col-sm">
+            <img class="img-fluid" src="./images/port/c.jpg" />
+          <h3>Wedding Dress</h3>
+          </div>
         </div>
-        <div class="col-sm">
-          <img src="./images/port/b.jpg" />
-          <p class="lead">
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-          </p>
+        <div id="port" class="row">
+          <div class="col-sm">
+            <img class="img-fluid" src="./images/port/d.jpg" />
+            <h3>Wedding Dress</h3>
+          </div>
+          <div class="col-sm">
+            <img class="img-fluid" src="./images/port/f.jpg" />
+            <h3>Wedding Dress</h3>
+          </div>
+          <div class="col-sm">
+            <img class="img-fluid" src="./images/port/g.jpg" />
+          <h3>Wedding Dress</h3>
+          </div>
         </div>
-        <div class="col-sm">
-          <img src="./images/port/c.jpg" />
-          <p class="lead">
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-          </p>
+      </div>
+    </div>
+    <!-- contact me -->
+    <div class="contact">
+      <div class="container">
+        <h1 id="title2">Our Contacts</h1>
+        <img id="map1" class="img-fluid" src="./images/7.jpg" />
+        <div class="info">
+          <h1 id="title">I Can</h1>
+
+          <div class="addr">
+            <h1>Adress</h1>
+            <div class="words">
+              <h4>8020 Shore Rd.</h4>
+              <h4>Brooklyn, NY 11209</h4>
+            </div>
+
+          </div>
+
+          <div class="phone">
+            <h1>phone</h1>
+            <h5>099 541235</h5>
+          </div>
+          <div class="mail">
+            <h1>E-mail</h1>
+            <h5>aahmedemad1000@gmail.com</h5>
+          </div>
+
         </div>
       </div>
     </div>
 
+  </div>
 
   </div>
 </template>
@@ -124,6 +175,13 @@ export default {
 </script>
 
 <style scoped>
+*{
+  font-family: garamond;
+  color: #9e363a;
+}
+h3{
+  text-align: center;
+}
 #nv{
   position: sticky;
 }
@@ -137,7 +195,11 @@ export default {
   /*background-image: url(../images/4.jpg);
   background-size:cover;*/
   height: 5000px;
+  background-color: #501e36;
 
+}
+.navbar{
+  background-color:	#501e36;
 }
 .navbar-light .navbar-brand{
   color: #FFF;
@@ -166,6 +228,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .navbar img{
   width: 100px;
 }
@@ -180,8 +243,8 @@ navbar-toggler{
   color: #FFF;
 }
 #carouselExampleFade{
-  height:500px;
   overflow: hidden;
+  height: 500px;
   position: relative;
   border-radius: 5px;
   margin-bottom: 35px;
@@ -195,7 +258,13 @@ navbar-toggler{
 }
 .h1{
   font-family: garamond;
-  color: #9e363a;
+  color: #FFF;
+  padding-top: 40px;
+}
+.h3{
+  text-align: center;
+  margin-bottom: 35px;
+  color: #FFF;
 }
 .col-sm p{
   font-family: garamond;
@@ -204,7 +273,7 @@ navbar-toggler{
 
 hr{
   color: #444;
-  margin-bottom: 35px;
+  margin-bottom: 0px;
 }
 .btn-outline-success{
   color: #9e363a;
@@ -217,15 +286,148 @@ hr{
 }
 
 .h1{
+  color: #FFF;
   margin-bottom: 35px;
+  text-align: center;
 }
 .col-sm{
   border-radius: 4px;
+  margin-bottom: 35px;
 }
 .col-sm  img{
   height: 303px;
   width: 334px;
   border-radius: 4px;
+  margin: auto;
   margin-bottom: 25px;
+}
+.portofolio{
+  background-color: #FFF;
+  position: relative;
+  margin-top: 0px;
+  top: -85px;
+}
+.portofolio h1{
+  padding-top: 60px;
+  text-align: center;
+  color: #501e36;
+}
+.portofolio q{
+  color: #501e36;
+}
+.portofolio h3{
+  color: #501e36;
+}
+.portofolio p{
+  margin-bottom: 75px;
+  color: #501e36;
+}
+#port{
+  margin-bottom: 25px;
+}
+.header{
+  position: relative;
+  height: 670px;
+  background-image: url(./images/8.jpg);
+  background-size: cover;
+  top: -85px;
+  background-color: #FFF;
+}
+.header h1{
+  margin: auto;
+  padding-top: 250px;
+  text-align: center;
+  color: #FFF;
+  font-size: 100px;
+  margin-bottom: 0px;
+  opacity:
+}
+.header p{
+  color: #FFF;
+  font-size: 50px;
+  text-align: center;
+}
+
+#map1{
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  height: 400px;
+  background-color: rgba(150,150,150,0.3);
+  border: solid 3px #FFF;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  background-size: cover;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.contact h1{
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 35px;
+
+}
+.contact .info{
+  float: left;
+  margin-left: 60px;
+  box-sizing: content-box;
+}
+.addr,.mail,.phone{
+  margin-bottom: 25px;
+}
+.addr h1,.addr h4{
+  color: #FFF;
+  text-align: center;
+}
+.addr h4{
+  margin-top: -15px;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+}
+.words{
+  margin-top: -25px;
+  margin-left: 30px;
+}
+.phone h5{
+  color: #FFF;
+  margin-top: -25px;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+}
+.mail h1{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+      font-size: 40px;
+}
+.mail h5{
+  color: #FFF;
+  margin-left: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+}
+#title{
+  font-size: 55px;
+}
+#title2{
+  margin-bottom: 80px;
+  font-size: 50px;
+}
+@media (max-width: 576px) {
+  #map1{
+    display: block;
+    width: 80%;
+    margin: auto;
+  }
+}
+@media (max-width: 768px) {
+  #map1{
+    display: block;
+    width: 80%;
+    margin: auto;
+  }
 }
 </style>
