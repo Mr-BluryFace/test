@@ -3,6 +3,8 @@ import App from './App.vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import Routes from './routes'
+import AOS from 'aos'
+import "aos/dist/aos.css"
 
 Vue.use(VueResource);
 Vue.use(VueRouter);

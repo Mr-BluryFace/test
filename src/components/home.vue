@@ -5,6 +5,7 @@
     <img src="./images/4.jpg" />
   </div>
     -->
+    <!--
     <div id="nv" class="container sticky-top">
       <nav class="navbar navbar-light sticky-top" style="color:#FFF;background-color:#501e36;">
         <img src="./images/logo1.png" />
@@ -42,6 +43,17 @@
       </nav>
 
     </div>
+    -->
+    <div id="change" class="navbar sticky-top">
+      <img src="./images/logo1.png" />
+      <ul>
+        <li>HOME</li>
+        <li>Work</li>
+        <li>Blog</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
 
     <!--slide-->
     <div class="header">
@@ -82,6 +94,28 @@
       </div>
     </div>
       -->
+      <!--stats-->
+      <div class="stats">
+        <div class="container">
+          <h1><q>Stats</q></h1>
+          <div class="left">
+            <p class="h4">Cutting</p>
+            <p class="h4">Styling</p>
+            <p class="h4">Appontments</p>
+          </div>
+          <div class="right">
+            <div>
+              <span id="perc"></span>
+            </div>
+            <div>
+              <span id="perc"></span>
+            </div>
+            <div>
+              <span id="perc"></span>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- port -->
     <div class="portofolio">
@@ -92,36 +126,36 @@
           Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
         </p>
         <div id="port" class="row">
-          <div class="col-sm">
+          <div data-aos="fade-up" class="col-sm">
             <div id="p-over" class="over">
               <button type="button" class="btn btn-outline-secondary">Secondary</button>
             </div>
             <img class="img-fluid" src="./images/port/a.jpg" />
             <h3>Wedding Dress</h3>
           </div>
-          <div class="col-sm">
+          <div data-aos="fade-up" class="col-sm">
             <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/b.jpg" />
             <h3>Wedding Dress</h3>
           </div>
-          <div class="col-sm">
+          <div data-aos="fade-up" class="col-sm">
             <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/c.jpg" />
           <h3>Wedding Dress</h3>
           </div>
         </div>
         <div id="port" class="row">
-          <div class="col-sm">
+          <div data-aos="fade-up" class="col-sm">
             <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/d.jpg" />
             <h3>Wedding Dress</h3>
           </div>
-          <div class="col-sm">
+          <div data-aos="fade-up" class="col-sm">
             <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/f.jpg" />
             <h3>Wedding Dress</h3>
           </div>
-          <div class="col-sm">
+          <div data-aos="fade-up" class="col-sm">
             <div id="p-over" class="over"></div>
             <img class="img-fluid" src="./images/port/g.jpg" />
           <h3>Wedding Dress</h3>
@@ -167,19 +201,30 @@
 </template>
 
 <script>
+
 export default {
   data() {
+    perc: "80"+'px'
+
 
   },
   methods:{
-    scrollHandler: function(){
+    handleScroll(event) {
+      // Any code to be executed when the window is scrolled
       this.isUserScrolling = (window.scrollY > 0);
       console.log('calling handleScroll');
     }
   },
-  created(){
-
+  created() {
+    this.handleDebouncedScroll = debounce(this.handleScroll, 100);
+    window.addEventListener('scroll', this.handleDebouncedScroll);
+  },
+  beforeDestroy() {
+    // I switched the example from `destroyed` to `beforeDestroy`
+    // to exercise your mind a bit. This lifecycle method works too.
+    window.removeEventListener('scroll', this.handleDebouncedScroll);
   }
+
 
 }
 </script>
@@ -205,11 +250,25 @@ h3{
   /*background-image: url(../images/4.jpg);
   background-size:cover;*/
   height: 5000px;
-  background-color: #501e36;
 
 }
 .navbar{
-  background-color:	#501e36;
+  background-color:	transparent;
+}
+#change{
+  background-color:	transparent;
+}
+.test2{
+  background-color:	#000;
+}
+.navbar ul{
+  padding-top: 10px;
+  padding-right: 80px;
+}
+.navbar li{
+  display: inline-block;
+  text-align: left;
+  margin: 10px 25px;
 }
 .navbar-light .navbar-brand{
   color: #FFF;
@@ -241,6 +300,7 @@ h3{
 
 .navbar img{
   width: 100px;
+  margin-left: 65px;
 }
 li{
   color: #FFF;
@@ -303,6 +363,7 @@ hr{
 .col-sm{
   border-radius: 4px;
   margin-bottom: 35px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .col-sm  img{
   height: 303px;
@@ -310,6 +371,7 @@ hr{
   border-radius: 4px;
   margin: auto;
   margin-bottom: 25px;
+
 }
 .portofolio{
   background-color: #FFF;
@@ -341,7 +403,7 @@ hr{
   height: 670px;
   background-image: url(./images/8.jpg);
   background-size: cover;
-  top: -85px;
+  top: -105px;
   background-color: #FFF;
 }
 .header h1{
@@ -439,14 +501,9 @@ hr{
 #title2{
   margin-bottom: 80px;
   font-size: 50px;
+  margin-top: 75px;
 }
-@media (max-width: 576px) {
-  #map1{
-    display: block;
-    width: 80%;
-    margin: auto;
-  }
-}
+
 @media (max-width: 768px) {
   #map1{
     display: block;
@@ -477,7 +534,60 @@ hr{
   color: #FFF;
   margin-left: 40%;
   margin-top: 60%;
+}
+.stats{
+  height: 330px;
+  text-align: center;
+}
+.stats h1{
+  font-size: 45px;
+  margin-top: -60px;
+  margin-bottom: 25px;
+}
+.left{
+  display: inline;
+  float: left;
+}
+.left p{
+  margin: 20px 0px ;
+  font-style: italic;
+  position: relative;
+  left: 100px;
 
-
+}
+.right{
+  float: right;
+  position: relative;
+  width: 600px;
+}
+.right div{
+  margin: 23px 0px;
+  background-color: #F2F2F2;
+  height: 25px;
+  border-radius: 25px;
+  position: relative;
+  right: 80px;
+}
+.right span{
+  background-image: linear-gradient(to right, rgb(204, 43, 94), rgb(117, 58, 136));
+  display: block;
+  height: 25px;
+  border-radius: 25px;
+}
+.test{
+  background-image: linear-gradient(to right, rgb(204, 43, 94), rgb(117, 58, 136));
+  display: block;
+  height: 25px;
+  border-radius: 25px;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+  width: 90%;
+}
+#perc{
+  width: 25px;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
 }
 </style>
