@@ -44,7 +44,7 @@
 
     </div>
     -->
-    <div id="change" class="navbar sticky-top">
+    <div v-scroll='handleScroll1' id="change" class="navbar sticky-top">
       <img src="./images/logo1.png" />
       <ul>
         <li>HOME</li>
@@ -105,13 +105,13 @@
           </div>
           <div class="right">
             <div>
-              <span id="perc"></span>
+              <span v-scroll="handleScroll2" id="perc" class="test"></span>
             </div>
             <div>
-              <span id="perc"></span>
+              <span v-scroll="handleScroll2" id="perc"></span>
             </div>
             <div>
-              <span id="perc"></span>
+              <span v-scroll="handleScroll2" id="perc"></span>
             </div>
           </div>
         </div>
@@ -204,29 +204,40 @@
 
 export default {
   data() {
-    perc: "80"+'px'
-
 
   },
   methods:{
-    handleScroll(event) {
-      // Any code to be executed when the window is scrolled
-      this.isUserScrolling = (window.scrollY > 0);
-      console.log('calling handleScroll');
+    handleScroll1: function (evt, el) {
+      if (window.scrollY > 0) {
+        el.setAttribute(
+          'style',
+          'background-color: #673147'
+        )
+      }
+      else if (window.scrollY < 1) {
+        el.setAttribute(
+          'style',
+          'background-color: transparent'
+        )
+      }
+    },
+    handleScroll2: function (evt, el) {
+      if (window.scrollY > 200) {
+        el.setAttribute(
+          'style',
+          'width: 80%'
+        )
+      }
+      else if (window.scrollY < 250) {
+        el.setAttribute(
+          'style',
+          'width: 10%'
+        )
+      }
     }
-  },
-  created() {
-    this.handleDebouncedScroll = debounce(this.handleScroll, 100);
-    window.addEventListener('scroll', this.handleDebouncedScroll);
-  },
-  beforeDestroy() {
-    // I switched the example from `destroyed` to `beforeDestroy`
-    // to exercise your mind a bit. This lifecycle method works too.
-    window.removeEventListener('scroll', this.handleDebouncedScroll);
   }
-
-
 }
+
 </script>
 
 <style scoped>
@@ -249,7 +260,7 @@ h3{
 #Home{
   /*background-image: url(../images/4.jpg);
   background-size:cover;*/
-  height: 5000px;
+
 
 }
 .navbar{
@@ -257,6 +268,15 @@ h3{
 }
 #change{
   background-color:	transparent;
+  transition: 0.5s all ease-in-out;
+}
+.change2{
+  background-color: #191919;
+  color: #FFF;
+  opacity: 1;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
 }
 .test2{
   background-color:	#000;
@@ -268,8 +288,9 @@ h3{
 .navbar li{
   display: inline-block;
   text-align: left;
-  margin: 10px 25px;
+  margin: 0px 25px;
 }
+
 .navbar-light .navbar-brand{
   color: #FFF;
   position: sticky;
@@ -305,10 +326,14 @@ h3{
 li{
   color: #FFF;
 }
+#change ul li:hover{
+  cursor: pointer;
+}
 .navbar{
   border-radius: 6px;
   margin-bottom: 18px;
 }
+
 navbar-toggler{
   color: #FFF;
 }
@@ -509,6 +534,10 @@ hr{
     display: block;
     width: 80%;
     margin: auto;
+    margin-bottom: 20px;
+  }
+  .header{
+    margin-top: -181px;
   }
 }
 #map{

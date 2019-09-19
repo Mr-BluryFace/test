@@ -9,6 +9,19 @@ import "aos/dist/aos.css"
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
+
+Vue.directive('scroll', {
+  inserted: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('scroll', f);
+      }
+    }
+    window.addEventListener('scroll', f);
+  }
+});
+
+
 const router = new VueRouter({
   routes: Routes
 });
@@ -16,5 +29,5 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   render: h => h(App),
-  router: router
-})
+  router: router,
+});
